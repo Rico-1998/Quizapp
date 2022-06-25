@@ -8,10 +8,69 @@
     <title>Quizapp</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+
+    <!--bootrsap files-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
 </head>
 
-<body>
+<body onload="init()">
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Quizapp</span>
+        </div>
+    </nav>
 
+    <div class="container">
+
+        <div class="card quiz-card">
+            <img src="./img/pencil.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" id="questionText"></h5>
+
+
+                <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+                    <div class="card-body" id="answer_1">
+                        Antwort
+                    </div>
+                </div>
+
+
+                <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
+                    <div class="card-body" id="answer_2">
+                        Antwort
+                    </div>
+                </div>
+
+
+                <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
+                    <div class="card-body" id="answer_3">
+                        Antwort
+                    </div>
+                </div>
+
+
+                <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
+                    <div class="card-body" id="answer_4">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="question-footer">
+                    <span>
+                        <b>1</b> von <b id="number"></b> Fragen
+                    </span>
+
+                    <button class="btn btn-primary">Nächste Frage</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>
