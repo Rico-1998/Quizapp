@@ -1,17 +1,37 @@
-body {
-    background-color: #38335c !important;
+.progress {
+    border-radius: 0 !important;
+}
+
+.navBar a {
+    color: rgba(218, 198, 198, 0.606);
+}
+
+.navBar a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 .container {
     min-height: 100vh;
-    background-color: #38335c !important;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+#category {
+    background-color: #38335c;
+    color: white;
+    width: 7rem;
+}
+
 .quiz-card {
-    width: 30rem;
+    width: 35rem;
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.logo {
+    width: 100px;
 }
 
 .question-footer {

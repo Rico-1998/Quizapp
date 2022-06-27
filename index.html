@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizapp</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <script src="script.js"></script>
+    <script src="questions.js"></script>
 
     <!--bootrsap files-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,21 +21,46 @@
 </head>
 
 <body onload="init()">
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Quizapp</span>
-        </div>
-    </nav>
+    <!-- progress -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"
+            id="progress"></div>
+    </div>
 
+    <!-- Quizcontainer -->
     <div class="container">
 
         <div class="card quiz-card">
-            <img src="./img/pencil.jpg" class="card-img-top">
-            <div class="card-body">
+
+            <div id="category" class="category d-flex flex-column">
+                <div class="d-flex flex-column align-items-center"><img class="logo mt-2" src="./img/logo.png"></div>
+
+                <nav class="nav flex-column navBar mt-5">
+                    <a class="nav-link active " aria-current="page" href="#">HTML</a>
+                    <a class="nav-link " href="#">CSS</a>
+                    <a class="nav-link " href="#">Automobil</a>
+                </nav>
+
+            </div>
+
+            <div class="card-body" id="endscreen" style="display: none;">
+                <div class="d-flex justify-content-center"><img src="./img/brain result.png"></div>
+                <div class="text-center mt-5">Du hast <b id="right-answers"></b> fragen von <b id="all-questions"></b>
+                    fragen richtig
+                    beantwortet</div>
+
+                <div class="replay-btn">
+                    <button onclick="replay()" class="btn btn-primary" id="replay-btn">replay</button>
+                </div>
+            </div>
+
+
+            <div class="card-body" id="question-body">
                 <h5 class="card-title" id="questionText"></h5>
 
 
                 <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+                    <!-- die id wird als parameter mitgegeben -->
                     <div class="card-body" id="answer_1">
                         Antwort
                     </div>
@@ -62,10 +89,12 @@
 
                 <div class="question-footer">
                     <span>
-                        <b>1</b> von <b id="number"></b> Fragen
+                        <b id="question-number">1</b> von <b id="number"></b> Fragen
                     </span>
 
-                    <button class="btn btn-primary">Nächste Frage</button>
+                    <button onclick="nextQuestion()" class="btn btn-primary" disabled id="next-Button">Nächste
+                        Frage</button>
+                    <!--disabled sorgt dafür das der button nicht mehr anklickbar ist-->
                 </div>
             </div>
         </div>
